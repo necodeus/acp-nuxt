@@ -1,6 +1,6 @@
 <script setup>
-import HomeIcon from '../Components/Icons/Home.vue'
-import Logo from '../Components/Logo/Logo.vue'
+import HomeIcon from '~/components/Icons/Home.vue'
+import Logo from '~/components/Logo/Logo.vue'
 </script>
 
 <template>
