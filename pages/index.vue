@@ -3,29 +3,46 @@ import TopNavigation from "~/components/TopNavigation.vue";
 import MainNavigation from "~/components/MainNavigation.vue";
 import InformativeBox from "~/components/InformativeBox.vue";
 import EmptyBox from "~/components/EmptyBox.vue";
-
 import Pagination from '~/components/Pagination.vue'
 
-const current = 1
-const pages = 1
+import {
+  pageTexts,
+  knowledgeBaseTexts,
+  latestUpdatesTexts,
+} from "~/data/texts";
 
-const roles = []
-const navigation = []
-const shopRelatedArticles = []
-const systemRelatedArticles = []
+const current = 1
+const pages = 10
+
+const roles = [
+  {
+    name: 'Administrator',
+    code: 'admin',
+    description: 'Administrator posiada pełen dostęp do wszystkich funkcji i ustawień w panelu',
+  },
+  {
+    name: 'Redaktor',
+    code: 'editor',
+    description: 'Redaktor posiada dostęp do bloga, może tworzyć, edytować, publikować i cofać publikację wpisów',
+  },
+  {
+    name: 'Sprzedawca',
+    code: 'seller',
+    description: 'Sprzedawca posiada dostęp do sklepu, może tworzyć, edytować, usuwać produkty, kategorie, zamówienia, kody rabatowe, itp.',
+  },
+]
 </script>
 
 <template>
   <Head>
-    <title>Role @ admin.necodeo.com</title>
+    <title>{{pageTexts.rolesIndex.title}}</title>
   </Head>
   <div class="max-w-[1920px] mx-auto">
     <div class="fixed w-[400px] h-full ml-[5px]">
       <TopNavigation class="!rounded-t-none !rounded-b-none" />
       <MainNavigation
         class="mt-[5px]"
-        :navigation="navigation"
-        :selection="0"
+        :selection="4"
       />
     </div>
 
@@ -36,9 +53,9 @@ const systemRelatedArticles = []
           <InformativeBox
             class="!rounded-t-none"
             bgColor="#190A48"
-            color="rgba(255, 255, 255, 0.6)"
-            title="Role"
-            description="Role to grupy uprawnień, które możesz przypisać do użytkowników. Każdy użytkownik może mieć wiele ról."
+            color="rgba(255,255,255,0.6)"
+            :title="pageTexts.rolesIndex.title"
+            :description="pageTexts.rolesIndex.description"
           />
         </div>
         <div class="w-[calc(50%-2.5px)]">
@@ -54,11 +71,11 @@ const systemRelatedArticles = []
         <div class="rounded-[7px] ml-[7px] overflow-hidden">
           <div :class="['flex', 'justify-between', 'p-[14px_20px]', (key % 2 ? 'bg-[#241956]' : 'bg-[#2a1d66]')]" v-for="(role, key) in roles" v-bind:key="key">
             <div class="flex flex-col justify-between">
-              <div class="text-[17.5px] font-[500] mb-[7px]">{{ role?.name ?? 'Hello' }}</div>
-              <div class="text-[17.5px] opacity-[0.5]">{{ role?.description ?? 'hello@necodeo.com'}}</div>
+              <div class="text-[17.5px] font-[500] mb-[7px] text-white">{{ role?.name ?? 'Hello' }} <span class="opacity-[0.5]">({{ role?.code }})</span></div>
+              <div class="text-[17.5px] opacity-[0.5] text-white">{{ role?.description ?? 'hello@necodeo.com'}}</div>
             </div>
             <div class="flex flex-col justify-center">
-              <div class="text-[17.5px] opacity-[0.5]">20 users</div>
+              <div class="text-[17.5px] opacity-[0.5] text-white">20 użytkowników</div>
             </div>
           </div>
           <div v-show="!roles.length" class="opacity-[0.6]">
@@ -78,7 +95,7 @@ const systemRelatedArticles = []
             title="Baza wiedzy"
             description="Odkryj poradniki krok po kroku, które pomogą Ci zwiększyć sprzedaż w Twoim sklepie internetowym. Poznaj najlepsze praktyki dotyczące przyciągania klientów, zwiększania konwersji, remarketingu, social media, e-mail marketingu i analizy danych"
             color="rgba(255, 255, 255, 0.6)"
-            :articles="shopRelatedArticles"
+            :articles="knowledgeBaseTexts.articles"
           />
         </div>
         <div class="w-[calc(50%-2.5px)]">
@@ -87,7 +104,7 @@ const systemRelatedArticles = []
             title="Ostatnie aktualizacje"
             description="Dowiedz się, jakie nowe funkcje i usprawnienia zostały dodane, aby ulepszyć Twoje doświadczenie z obsługą panelu. Bądź na bieżąco z najnowszymi aktualizacjami, które pomogą Ci lepiej zarządzać swoimi stronami i poprawić interakcję z użytkownikami"
             color="rgba(255, 255, 255, 0.6)"
-            :articles="systemRelatedArticles"
+            :articles="latestUpdatesTexts.articles"
           />
         </div>
       </div>

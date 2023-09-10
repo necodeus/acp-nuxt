@@ -15,6 +15,6 @@ defineProps({
 </script>
 
 <template>
-    <Sign style="margin-left: 32px" width="38" height="38" :color="primaryColor" />
-    <Logotype style="margin-left: 32px; margin-bottom: 6px;" width="105" height="28" :color="secondaryColor" />
+    <Sign :style="{marginLeft: '32px'}" width="38" height="38" :color="primaryColor" />
+    <Logotype :style="{marginLeft: '32px', marginBottom: '6px'}" width="105" height="28" :color="secondaryColor" />
 </template>
