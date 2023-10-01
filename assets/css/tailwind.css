@@ -4,4 +4,12 @@
 
 html, body {
     background-color: #0F052F;
-} 
+}
+
+.main-container > :first-child {
+  margin-top: 0 !important;
+}
+
+.main-container > div {
+  margin: 5px;
+}

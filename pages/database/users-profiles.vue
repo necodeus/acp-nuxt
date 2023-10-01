@@ -35,14 +35,14 @@ const roles = [
 
 <template>
   <Head>
-    <title>{{pageTexts.rolesIndex.title}}</title>
+    <title>{{pageTexts.profilesIndex.title}}</title>
   </Head>
   <div class="max-w-[1920px] mx-auto">
     <div class="fixed w-[400px] h-full ml-[5px]">
       <TopNavigation class="!rounded-t-none !rounded-b-none" />
       <MainNavigation
         class="mt-[5px]"
-        :selection="4"
+        :selection="1"
       />
     </div>
 
@@ -54,8 +54,8 @@ const roles = [
             class="!rounded-t-none"
             bgColor="#190A48"
             color="rgba(255,255,255,0.6)"
-            :title="pageTexts.rolesIndex.title"
-            :description="pageTexts.rolesIndex.description"
+            :title="pageTexts.profilesIndex.title"
+            :description="pageTexts.profilesIndex.description"
           />
         </div>
         <div class="w-[calc(50%-2.5px)]">
@@ -112,13 +112,3 @@ const roles = [
     </div>
   </div>
 </template>
-
-<style scoped>
-.main-container > :first-child {
-  margin-top: 0 !important;
-}
-
-.main-container > div {
-  margin: 5px;
-}
-</style>

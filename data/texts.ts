@@ -1,11 +1,140 @@
 export const pageTexts = {
+    // W I T R Y N A
+    pagesIndex: {
+        title: 'Strony',
+        description: 'Strony to miejsca, w których możesz umieścić treści, które chcesz pokazać swoim klientom. Możesz tworzyć strony, które są widoczne w menu nawigacyjnym, a także strony, które są ukryte i dostępne tylko za pomocą bezpośredniego linku.',
+    },
+    navigationsIndex: {
+        title: 'Nawigacje',
+        description: 'Nawigacje to zestawy linków, które są widoczne w menu nawigacyjnym. Możesz tworzyć nawigacje, które są widoczne w menu nawigacyjnym, a także nawigacje, które są ukryte i dostępne tylko za pomocą bezpośredniego linku.',
+    },
+    imagesIndex: {
+        title: 'Obrazki',
+        description: 'Obrazki to pliki graficzne, które możesz umieścić na stronach, w nawigacjach, w zasobach lub w innych miejscach.',
+    },
+    resourcesIndex: {
+        title: 'Zasoby',
+        description: 'Zasoby to pliki, które możesz umieścić na stronach, w nawigacjach, w zasobach lub w innych miejscach.',
+    },
+    settingsIndex: {
+        title: 'Ustawienia',
+        description: 'Ustawienia to miejsce, w którym możesz zarządzać ustawieniami swojego sklepu internetowego.',
+    },
+    // U S E R S
     accountsIndex: {
         title: 'Konta',
-        description: '',
+        description: 'Konta to miejsce, w którym możesz zarządzać kontami użytkowników.',
+    },
+    verificationsIndex: {
+        title: 'Weryfikacje',
+        description: 'Weryfikacje to miejsce, w którym możesz zarządzać weryfikacjami użytkowników.',
+    },
+    sessionsIndex: {
+        title: 'Sesje',
+        description: 'Sesje to miejsce, w którym możesz zarządzać sesjami użytkowników.',
+    },
+    authorizationsIndex: {
+        title: 'Autoryzacje',
+        description: 'Autoryzacje to miejsce, w którym możesz zarządzać autoryzacjami użytkowników.',
     },
     rolesIndex: {
         title: 'Role',
         description: 'Role to grupy uprawnień, które możesz przypisać do użytkowników. Każdy użytkownik może mieć wiele ról',
+    },
+    profilesIndex: {
+        title: 'Profile',
+        description: 'Profile to miejsce, w którym możesz zarządzać profilami użytkowników.',
+    },
+    // B L O G
+    blogCategoriesIndex: {
+        title: 'Kategorie',
+        description: 'Kategorie to miejsce, w którym możesz zarządzać kategoriami bloga.',
+    },
+    blogTagsIndex: {
+        title: 'Tagi',
+        description: 'Tagi to miejsce, w którym możesz zarządzać tagami bloga.',
+    },
+    blogPostsIndex: {
+        title: 'Posty',
+        description: 'Posty to miejsce, w którym możesz zarządzać postami bloga.',
+    },
+    blogCommentsIndex: {
+        title: 'Komentarze',
+        description: 'Komentarze to miejsce, w którym możesz zarządzać komentarzami bloga.',
+    },
+    // F O R U M
+    forumCategoriesIndex: {
+        title: 'Kategorie',
+        description: 'Kategorie to miejsce, w którym możesz zarządzać kategoriami forum.',
+    },
+    forumThreadsIndex: {
+        title: 'Wątki',
+        description: 'Wątki to miejsce, w którym możesz zarządzać wątkami forum.',
+    },
+    forumPostsIndex: {
+        title: 'Posty',
+        description: 'Posty to miejsce, w którym możesz zarządzać postami forum.',
+    },
+    // S H O P
+    shopProductsIndex: {
+        title: 'Produkty',
+        description: 'Produkty to miejsce, w którym możesz zarządzać produktami sklepu.',
+    },
+    shopProductCategoriesIndex: {
+        title: 'Kategorie',
+        description: 'Kategorie to miejsce, w którym możesz zarządzać kategoriami produktów sklepu.',
+    },
+    shopProductAttributesIndex: {
+        title: 'Atrybuty',
+        description: 'Atrybuty to miejsce, w którym możesz zarządzać atrybutami produktów sklepu.',
+    },
+    shopDiscountTypesIndex: {
+        title: 'Typy rabatów',
+        description: 'Typy rabatów to miejsce, w którym możesz zarządzać typami rabatów sklepu.',
+    },
+    shopCouponsIndex: {
+        title: 'Kupony',
+        description: 'Kupony to miejsce, w którym możesz zarządzać kuponami sklepu.',
+    },
+    shopOrdersIndex: {
+        title: 'Zamówienia',
+        description: 'Zamówienia to miejsce, w którym możesz zarządzać zamówieniami sklepu.',
+    },
+    shopPaymentsIndex: {
+        title: 'Płatności',
+        description: 'Płatności to miejsce, w którym możesz zarządzać płatnościami sklepu.',
+    },
+    shopInvoicesIndex: {
+        title: 'Faktury',
+        description: 'Faktury to miejsce, w którym możesz zarządzać fakturami sklepu.',
+    },
+    shopShipmentsIndex: {
+        title: 'Wysyłki',
+        description: 'Wysyłki to miejsce, w którym możesz zarządzać wysyłkami sklepu.',
+    },
+    shopDeliveryProvidersIndex: {
+        title: 'Dostawcy',
+        description: 'Dostawcy to miejsce, w którym możesz zarządzać dostawcami sklepu.',
+    },
+    // shopShippingMethodsIndex: {
+    //     title: 'Metody',
+    //     description: 'Metody to miejsce, w którym możesz zarządzać metodami wysyłki sklepu.',
+    // },
+    shopReviewsIndex: {
+        title: 'Opinie',
+        description: 'Opinie to miejsce, w którym możesz zarządzać opiniami sklepu.',
+    },
+    shopDeliveriesIndex: {
+        title: 'Dostawy',
+        description: 'Dostawy to miejsce, w którym możesz zarządzać dostawami sklepu.',
+    },
+    shopComplaintsIndex: {
+        title: 'Reklamacje',
+        description: 'Reklamacje to miejsce, w którym możesz zarządzać reklamacjami sklepu.',
+    },
+    shopReturnsIndex: {
+        title: 'Zwroty',
+        description: 'Zwroty to miejsce, w którym możesz zarządzać zwrotami sklepu.',
     },
 };
 

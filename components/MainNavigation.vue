@@ -7,6 +7,7 @@ import ShoppingCartIcon from '~/components/Icons/ShoppingCart.vue'
 import CameraIcon from '~/components/Icons/Camera.vue'
 import MessageSquareIcon from '~/components/Icons/MessageSquare.vue'
 import LayoutIcon from '~/components/Icons/Layout.vue'
+import DatabaseIcon from '~/components/Icons/Database.vue'
 
 import { mainNavigation } from '~/data/navigations'
 
@@ -28,17 +29,26 @@ const getIconByName = name => ({
     CameraIcon,
     MessageSquareIcon,
     LayoutIcon,
+    DatabaseIcon,
 }[name])
+
+const isRouteInSubitems = (module, route) => {
+    return module[0].subitems.some(subitem => subitem.url.startsWith(route.path))
+}
 </script>
 
 <template>
     <div class="w-[100%] bg-[#160842] pr-[7px] pt-[7px] box-border rounded-t-[7px] h-[calc(100vh-150px)]">
         <div class="overflow-hidden flex bg-[#1b162c] h-[100%] rounded-t-[7px]">
             <div class="pt-[12px] overflow-scroll w-[64px] h-[100%] bg-[#16102A]">
-                <NuxtLink :to="module[0].url" v-for="(module, mk) in mainNavigation" v-bind:key="mk">
+                <NuxtLink :to="module[0].redirectTo ?? module[0].url" v-for="(module, mk) in mainNavigation" v-bind:key="mk">
                     <div class="relative w-[64px] h-[64px] flex justify-center items-center">
-                        <component :is="getIconByName(module[0].icon)" width="24" height="24"
-                            :color="route.path === module[0].url ? '#41FFC3' : '#8A8795'"></component>
+                        <component
+                            :is="getIconByName(module[0].icon)"
+                            :color="isRouteInSubitems(module, route) ? '#41FFC3' : '#8A8795'"
+                            width="24"
+                            height="24"
+                        ></component>
                     </div>
                 </NuxtLink>
             </div>
