@@ -11,32 +11,29 @@ import {
   latestUpdatesTexts,
 } from "~/data/texts";
 
-const current = 1
-const pages = 10
+const page = ref(1)
 
-// TODO: Pobierać dane z API
-const roles = [
-  {
-    name: 'Administrator',
-    code: 'admin',
-    description: 'Administrator posiada pełen dostęp do wszystkich funkcji i ustawień w panelu',
-  },
-  {
-    name: 'Redaktor',
-    code: 'editor',
-    description: 'Redaktor posiada dostęp do bloga, może tworzyć, edytować, publikować i cofać publikację wpisów',
-  },
-  {
-    name: 'Sprzedawca',
-    code: 'seller',
-    description: 'Sprzedawca posiada dostęp do sklepu, może tworzyć, edytować, usuwać produkty, kategorie, zamówienia, kody rabatowe, itp.',
-  },
-]
+const { data } = await useAsyncData(
+  'posts',
+  () => $fetch('http://admin-api.localhost/api/v1/schemas/c_navigations', {
+    params: {
+      page: page.value
+    }
+  }), {
+    watch: [page]
+  }
+)
+
+const route = useRoute()
+
+watch(() => route.path, () => {
+  page.value = route.query.page ?? 1
+}, { deep: true, immediate: true })
 </script>
 
 <template>
   <Head>
-    <title>{{pageTexts.rolesIndex.title}}</title>
+    <title>{{pageTexts.navigationsIndex.title}}</title>
   </Head>
   <div class="max-w-[1920px] mx-auto">
     <div class="fixed w-[400px] h-full ml-[5px]">
@@ -55,8 +52,8 @@ const roles = [
             class="!rounded-t-none"
             bgColor="#190A48"
             color="rgba(255,255,255,0.6)"
-            :title="pageTexts.rolesIndex.title"
-            :description="pageTexts.rolesIndex.description"
+            :title="pageTexts.navigationsIndex.title"
+            :description="pageTexts.navigationsIndex.description"
           />
         </div>
         <div class="w-[calc(50%-2.5px)]">
@@ -67,23 +64,16 @@ const roles = [
 
       <!-- DANE - START -->
       <div class="rounded-[7px] bg-[#1B162C]">
-        <Pagination :current="page" :pages="10" />
-
-        {{ data }}
+        <Pagination :current="page" :pages="Math.ceil(data.records_count / 10) || 1" />
 
         <div class="rounded-[7px] ml-[7px] overflow-hidden">
-          <div :class="['flex', 'justify-between', 'p-[14px_20px]', (key % 2 ? 'bg-[#241956]' : 'bg-[#2a1d66]')]" v-for="(role, key) in data.records" v-bind:key="key">
-            <div class="flex flex-col justify-between">
-              <div class="text-[17.5px] font-[500] mb-[7px] text-white">{{ role?.name ?? 'Hello' }} <span class="opacity-[0.5]">({{ role?.code }})</span></div>
-              <div class="text-[17.5px] opacity-[0.5] text-white">{{ role?.description ?? 'hello@necodeo.com'}}</div>
-            </div>
-            <div class="flex flex-col justify-center">
-              <div class="text-[17.5px] opacity-[0.5] text-white">20 użytkowników</div>
-            </div>
+          <div :class="['flex', 'justify-between', 'p-[14px_20px]', (key % 2 ? 'bg-[#241956]' : 'bg-[#2a1d66]')]" v-for="(record, key) in data.records" v-bind:key="key">
+            {{ record }}
           </div>
+          <div v-if="!data.records.length" :class="['flex', 'justify-between', 'p-[14px_20px]', 'bg-[#2a1d66]', 'text-white']">Brak rekordów</div>
         </div>
 
-        <Pagination :current="page" :pages="10" />
+        <Pagination :current="page" :pages="Math.ceil(data.records_count / 10) || 1" />
       </div>
       <!-- DANE - KONIEC -->
 
