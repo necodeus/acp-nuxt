@@ -13,6 +13,8 @@ import {
 
 import { slugToTable } from '~/helpers/schemas'
 
+const BASE_URL = useRuntimeConfig().public.apiUrl
+
 const route = useRoute()
 
 const page = ref(1)
@@ -20,7 +22,7 @@ const table = ref(slugToTable(route.params.page))
 
 const { data } = await useAsyncData(
   'posts',
-  () => $fetch(`http://admin-api.localhost/api/v1/schemas/${table.value}`, {
+  () => $fetch(`${BASE_URL}/schemas/${table.value}`, {
     params: {
       page: page.value
     }

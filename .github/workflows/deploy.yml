@@ -39,4 +39,4 @@ jobs:
             source ~/.nvm/nvm.sh
             nvm use 18.17.0
             lsof -i:3000 -t | xargs -r kill
-            PORT=3000 node .output/server/index.mjs
+            API_URL=http://admin-api.necodeo.com/api/v1 PORT=3000 node .output/server/index.mjs
