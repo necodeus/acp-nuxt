@@ -35,9 +35,8 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            cd /var/www/blog.necodeo.com/admin/
+            cd /var/www/blog.necodeo.com/admin
             source ~/.nvm/nvm.sh
-            nvm install 18.17.0
             nvm use 18.17.0
             lsof -i:3000 -t | xargs -r kill
-            API_URL=http://admin-api.necodeo.com/api/v1 PORT=3000 node .output/server/index.mjs &
+            pm2 start NUXT_PUBLIC_API_BASE_URL=https://admin-api.necodeo.com/api/v1 PORT=3000 node .output/server/index.mjs
