@@ -1,39 +1,43 @@
 <script setup>
 import TopNavigation from "~/components/TopNavigation.vue";
 import MainNavigation from "~/components/MainNavigation.vue";
-import InformativeBox from "~/components/InformativeBox.vue";
-import EmptyBox from "~/components/EmptyBox.vue";
+import InformativeBox from '~/components/InformativeBox.vue';
+import EmptyBox from '~/components/EmptyBox.vue';
 import Pagination from '~/components/Pagination.vue'
 
 import {
   pageTexts,
   knowledgeBaseTexts,
   latestUpdatesTexts,
-} from "~/data/texts";
+} from '~/data/schemas';
+
+import { slugToTable } from '~/helpers/schemas'
+
+const route = useRoute()
 
 const page = ref(1)
+const table = ref(slugToTable(route.params.page))
 
 const { data } = await useAsyncData(
   'posts',
-  () => $fetch('http://admin-api.localhost/api/v1/schemas/s_payments', {
+  () => $fetch(`http://admin-api.localhost/api/v1/schemas/${table.value}`, {
     params: {
       page: page.value
     }
   }), {
-    watch: [page]
+    watch: [page, table]
   }
 )
 
-const route = useRoute()
-
 watch(() => route.path, () => {
   page.value = route.query.page ?? 1
+  table.value = slugToTable(route.params.page)
 }, { deep: true, immediate: true })
 </script>
 
 <template>
   <Head>
-    <title>{{pageTexts.shopPaymentsIndex.title}}</title>
+    <title>{{pageTexts[table]?.title || 'Niezdefiniowany tytuł'}}</title>
   </Head>
   <div class="max-w-[1920px] mx-auto">
     <div class="fixed w-[400px] h-full ml-[5px]">
@@ -45,39 +49,34 @@ watch(() => route.path, () => {
     </div>
 
     <div class="main-container ml-[405px]">
-      <!-- NAGŁÓWEK - START -->
       <div class="flex justify-between">
         <div class="w-[calc(50%-2.5px)]">
           <InformativeBox
             class="!rounded-t-none"
             bgColor="#190A48"
             color="rgba(255,255,255,0.6)"
-            :title="pageTexts.shopPaymentsIndex.title"
-            :description="pageTexts.shopPaymentsIndex.description"
+            :title="pageTexts[table]?.title || 'Niezdefiniowany tytuł'"
+            :description="pageTexts[table]?.description || 'Niezdefiniowany opis'"
           />
         </div>
         <div class="w-[calc(50%-2.5px)]">
           <EmptyBox class="!rounded-t-none" bgColor="#1B162C" />
         </div>
       </div>
-      <!-- NAGŁÓWEK - KONIEC -->
 
-      <!-- DANE - START -->
       <div class="rounded-[7px] bg-[#1B162C]">
-        <Pagination :current="page" :pages="Math.ceil(data.records_count / 10) || 1" />
+        <Pagination :current="page * 1" :pages="Math.ceil(data.records_count / 10) || 1" />
 
         <div class="rounded-[7px] ml-[7px] overflow-hidden">
           <div :class="['flex', 'justify-between', 'p-[14px_20px]', (key % 2 ? 'bg-[#241956]' : 'bg-[#2a1d66]')]" v-for="(record, key) in data.records" v-bind:key="key">
             {{ record }}
           </div>
-          <div v-if="!data.records.length" :class="['flex', 'justify-between', 'p-[14px_20px]', 'bg-[#2a1d66]', 'text-white']">Brak rekordów</div>
+          <div v-if="!data.records?.length" :class="['flex', 'justify-between', 'p-[14px_20px]', 'bg-[#2a1d66]', 'text-white']">Brak rekordów</div>
         </div>
 
         <Pagination :current="page" :pages="Math.ceil(data.records_count / 10) || 1" />
       </div>
-      <!-- DANE - KONIEC -->
 
-      <!-- SEKCJA INFORMACYJNA - START -->
       <div class="flex justify-between">
         <div class="w-[calc(50%-2.5px)]">
           <InformativeBox
@@ -98,7 +97,6 @@ watch(() => route.path, () => {
           />
         </div>
       </div>
-      <!-- SEKCJA INFORMACYJNA - KONIEC -->
     </div>
   </div>
 </template>

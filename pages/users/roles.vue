@@ -9,7 +9,7 @@ import {
   pageTexts,
   knowledgeBaseTexts,
   latestUpdatesTexts,
-} from "~/data/texts";
+} from "~/data/schemas";
 
 const current = 1
 const pages = 10
@@ -36,7 +36,7 @@ const roles = [
 
 <template>
   <Head>
-    <title>{{pageTexts.rolesIndex.title}}</title>
+    <title>{{pageTexts?.rolesIndex?.title}}</title>
   </Head>
   <div class="max-w-[1920px] mx-auto">
     <div class="fixed w-[400px] h-full ml-[5px]">
@@ -55,8 +55,8 @@ const roles = [
             class="!rounded-t-none"
             bgColor="#190A48"
             color="rgba(255,255,255,0.6)"
-            :title="pageTexts.rolesIndex.title"
-            :description="pageTexts.rolesIndex.description"
+            :title="pageTexts?.rolesIndex?.title"
+            :description="pageTexts?.rolesIndex?.description"
           />
         </div>
         <div class="w-[calc(50%-2.5px)]">

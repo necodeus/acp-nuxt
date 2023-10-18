@@ -1,138 +1,134 @@
 export const pageTexts = {
     // W I T R Y N A
-    pagesIndex: {
+    'c_pages': {
         title: 'Strony',
         description: 'Strony to miejsca, w których możesz umieścić treści, które chcesz pokazać swoim klientom. Możesz tworzyć strony, które są widoczne w menu nawigacyjnym, a także strony, które są ukryte i dostępne tylko za pomocą bezpośredniego linku.',
     },
-    navigationsIndex: {
+    'c_navigations': {
         title: 'Nawigacje',
         description: 'Nawigacje to zestawy linków, które są widoczne w menu nawigacyjnym. Możesz tworzyć nawigacje, które są widoczne w menu nawigacyjnym, a także nawigacje, które są ukryte i dostępne tylko za pomocą bezpośredniego linku.',
     },
-    imagesIndex: {
+    'c_images': {
         title: 'Obrazki',
         description: 'Obrazki to pliki graficzne, które możesz umieścić na stronach, w nawigacjach, w zasobach lub w innych miejscach.',
     },
-    resourcesIndex: {
+    'c_resources': {
         title: 'Zasoby',
         description: 'Zasoby to pliki, które możesz umieścić na stronach, w nawigacjach, w zasobach lub w innych miejscach.',
     },
-    settingsIndex: {
+    'c_settings': {
         title: 'Ustawienia',
         description: 'Ustawienia to miejsce, w którym możesz zarządzać ustawieniami swojego sklepu internetowego.',
     },
     // U S E R S
-    accountsIndex: {
+    'u_accounts': {
         title: 'Konta',
         description: 'Konta to miejsce, w którym możesz zarządzać kontami użytkowników.',
     },
-    verificationsIndex: {
+    'u_verifications': {
         title: 'Weryfikacje',
         description: 'Weryfikacje to miejsce, w którym możesz zarządzać weryfikacjami użytkowników.',
     },
-    sessionsIndex: {
+    'u_sessions': {
         title: 'Sesje',
         description: 'Sesje to miejsce, w którym możesz zarządzać sesjami użytkowników.',
     },
-    authorizationsIndex: {
+    'u_authorizations': {
         title: 'Autoryzacje',
         description: 'Autoryzacje to miejsce, w którym możesz zarządzać autoryzacjami użytkowników.',
     },
-    rolesIndex: {
+    'u_roles': {
         title: 'Role',
         description: 'Role to grupy uprawnień, które możesz przypisać do użytkowników. Każdy użytkownik może mieć wiele ról',
     },
-    profilesIndex: {
+    'u_profiles': {
         title: 'Profile',
         description: 'Profile to miejsce, w którym możesz zarządzać profilami użytkowników.',
     },
     // B L O G
-    blogCategoriesIndex: {
+    'b_categories': {
         title: 'Kategorie',
         description: 'Kategorie to miejsce, w którym możesz zarządzać kategoriami bloga.',
     },
-    blogTagsIndex: {
+    'b_tags': {
         title: 'Tagi',
         description: 'Tagi to miejsce, w którym możesz zarządzać tagami bloga.',
     },
-    blogPostsIndex: {
+    'b_posts': {
         title: 'Posty',
         description: 'Posty to miejsce, w którym możesz zarządzać postami bloga.',
     },
-    blogCommentsIndex: {
+    'b_comments': {
         title: 'Komentarze',
         description: 'Komentarze to miejsce, w którym możesz zarządzać komentarzami bloga.',
     },
     // F O R U M
-    forumCategoriesIndex: {
+    'f_categories': {
         title: 'Kategorie',
         description: 'Kategorie to miejsce, w którym możesz zarządzać kategoriami forum.',
     },
-    forumThreadsIndex: {
+    'f_threads': {
         title: 'Wątki',
         description: 'Wątki to miejsce, w którym możesz zarządzać wątkami forum.',
     },
-    forumPostsIndex: {
+    'f_posts': {
         title: 'Posty',
         description: 'Posty to miejsce, w którym możesz zarządzać postami forum.',
     },
     // S H O P
-    shopProductsIndex: {
+    's_products': {
         title: 'Produkty',
         description: 'Produkty to miejsce, w którym możesz zarządzać produktami sklepu.',
     },
-    shopProductCategoriesIndex: {
+    's_product_categories': {
         title: 'Kategorie',
         description: 'Kategorie to miejsce, w którym możesz zarządzać kategoriami produktów sklepu.',
     },
-    shopProductAttributesIndex: {
+    's_product_attributes': {
         title: 'Atrybuty',
         description: 'Atrybuty to miejsce, w którym możesz zarządzać atrybutami produktów sklepu.',
     },
-    shopDiscountTypesIndex: {
+    's_discount_types': {
         title: 'Typy rabatów',
         description: 'Typy rabatów to miejsce, w którym możesz zarządzać typami rabatów sklepu.',
     },
-    shopCouponsIndex: {
+    's_coupons': {
         title: 'Kupony',
         description: 'Kupony to miejsce, w którym możesz zarządzać kuponami sklepu.',
     },
-    shopOrdersIndex: {
+    's_orders': {
         title: 'Zamówienia',
         description: 'Zamówienia to miejsce, w którym możesz zarządzać zamówieniami sklepu.',
     },
-    shopPaymentsIndex: {
+    's_payments': {
         title: 'Płatności',
         description: 'Płatności to miejsce, w którym możesz zarządzać płatnościami sklepu.',
     },
-    shopInvoicesIndex: {
+    's_invoices': {
         title: 'Faktury',
         description: 'Faktury to miejsce, w którym możesz zarządzać fakturami sklepu.',
     },
-    shopShipmentsIndex: {
+    's_shippments': {
         title: 'Wysyłki',
         description: 'Wysyłki to miejsce, w którym możesz zarządzać wysyłkami sklepu.',
     },
-    shopDeliveryProvidersIndex: {
+    's_delivery_providers': {
         title: 'Dostawcy',
         description: 'Dostawcy to miejsce, w którym możesz zarządzać dostawcami sklepu.',
     },
-    // shopShippingMethodsIndex: {
-    //     title: 'Metody',
-    //     description: 'Metody to miejsce, w którym możesz zarządzać metodami wysyłki sklepu.',
-    // },
-    shopReviewsIndex: {
+    's_reviews': {
         title: 'Opinie',
         description: 'Opinie to miejsce, w którym możesz zarządzać opiniami sklepu.',
     },
-    shopDeliveriesIndex: {
+    's_deliveries': {
         title: 'Dostawy',
         description: 'Dostawy to miejsce, w którym możesz zarządzać dostawami sklepu.',
     },
-    shopComplaintsIndex: {
+    's_complaints': {
         title: 'Reklamacje',
         description: 'Reklamacje to miejsce, w którym możesz zarządzać reklamacjami sklepu.',
     },
-    shopReturnsIndex: {
+    's_returns': {
         title: 'Zwroty',
         description: 'Zwroty to miejsce, w którym możesz zarządzać zwrotami sklepu.',
     },
