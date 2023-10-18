@@ -3,8 +3,8 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "start": "API_URL=http://admin-api.localhost/api/v1 node .output/server/index.mjs",
-    "dev": "API_URL=http://admin-api.localhost/api/v1 nuxt dev"
+    "start": "node .output/server/index.mjs",
+    "dev": "nuxt dev"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",

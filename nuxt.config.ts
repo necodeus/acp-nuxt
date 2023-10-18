@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   ],
   runtimeConfig: {
     public: {
-      apiUrl: process.env.API_URL,
+      apiUrl: process.env.API_URL ?? 'http://admin-api.localhost/api/v1',
     },
   },
 })
