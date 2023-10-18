@@ -36,5 +36,6 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd /var/www/blog.necodeo.com/admin/
+            source ~/.nvm/nvm.sh
             nvm use 18.17.0
-            node server/index.mjs
+            node .output/server/index.mjs
