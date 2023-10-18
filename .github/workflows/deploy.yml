@@ -20,7 +20,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           source: "./.output/"
-          target: "/var/www/${{ secrets.APP_DOMAIN }}/"
+          target: "/var/www/blog.necodeo.com/admin"
 
       - name: Run
         uses: appleboy/ssh-action@master
@@ -29,6 +29,6 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            cd /var/www/${{ secrets.APP_DOMAIN }}/
+            cd /var/www/blog.necodeo.com/admin/
             nvm use 18.17.0
             node server/index.mjs
