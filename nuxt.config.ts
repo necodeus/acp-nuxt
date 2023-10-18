@@ -6,9 +6,4 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
   ],
-  runtimeConfig: {
-    public: {
-      apiUrl: process.env.API_URL ?? 'http://admin-api.localhost/api/v1',
-    },
-  },
 })
