@@ -38,4 +38,5 @@ jobs:
             cd /var/www/blog.necodeo.com/admin/
             source ~/.nvm/nvm.sh
             nvm use 18.17.0
-            node .output/server/index.mjs
+            lsof -i:3000 -t | xargs -r kill
+            PORT=3000 node .output/server/index.mjs
