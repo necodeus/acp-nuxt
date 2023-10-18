@@ -39,4 +39,5 @@ jobs:
             source ~/.nvm/nvm.sh
             nvm use 18.17.0
             lsof -i:3000 -t | xargs -r kill
-            NUXT_PUBLIC_API_BASE_URL=https://admin-api.necodeo.com/api/v1 PORT=3000 pm2 start node .output/server/index.mjs
+            pm2 delete blog-admin || true
+            pm2 start "NUXT_PUBLIC_API_BASE_URL=https://admin-api.necodeo.com/api/v1 PORT=3000 node .output/server/index.mjs" --name blog-admin
