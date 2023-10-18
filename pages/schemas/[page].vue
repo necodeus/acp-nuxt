@@ -22,11 +22,17 @@ const table = ref(slugToTable(route.params.page))
 
 const { data } = await useAsyncData(
   'posts',
-  () => $fetch(`${BASE_URL}/schemas/${table.value}`, {
-    params: {
-      page: page.value
-    }
-  }), {
+  () => {
+    const resp = $fetch(`${BASE_URL}/schemas/${table.value}`, {
+      params: {
+        page: page.value
+      }
+    })
+
+    console.log(resp)
+
+    return resp
+  }, {
     watch: [page, table]
   }
 )
