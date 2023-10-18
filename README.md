@@ -1,5 +1,7 @@
 # ACP
 
+[![Deploy](https://github.com/necodeus/acp/actions/workflows/deploy.yml/badge.svg?event=status)](https://github.com/necodeus/acp/actions/workflows/deploy.yml)
+
 ## Development
 
 ```bash
