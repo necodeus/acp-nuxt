@@ -1,6 +1,6 @@
 # ACP
 
-![](https://github.com/necodeus/acp/actions/workflows/deploy.yml/badge.svg)
+[![Deploy](https://github.com/necodeus/acp/actions/workflows/deploy.yml/badge.svg?branch=production)](https://github.com/necodeus/acp/actions/workflows/deploy.yml)
 
 ## Development
 
