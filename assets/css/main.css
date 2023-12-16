@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 html, body {
-    background-color: #0F052F;
+    /* background-color: #0F052F; */
+    background-color: #141414e6;
 }
 
 .main-container > :first-child {

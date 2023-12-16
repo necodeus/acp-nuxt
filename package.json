@@ -1,16 +1,36 @@
 {
-  "name": "nuxt-app",
+  "name": "acp",
   "private": true,
   "scripts": {
     "build": "nuxt build",
     "start": "node .output/server/index.mjs",
-    "dev": "nuxt dev"
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare && husky install"
   },
   "devDependencies": {
-    "@nuxt/devtools": "latest",
-    "@nuxt/schema": "^3.7.4",
-    "@nuxtjs/tailwindcss": "^6.8.0",
-    "@types/node": "^18.17.0",
-    "nuxt": "3.7.4"
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
+    "@formkit/nuxt": "^1.4.0",
+    "@formkit/themes": "^1.4.0",
+    "@nuxtjs/partytown": "^1.4.0",
+    "@nuxtjs/tailwindcss": "^6.10.1",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^11.1.0",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.2.5",
+    "@semantic-release/release-notes-generator": "^12.1.0",
+    "@types/markdown-it": "^13.0.7",
+    "@types/node": "^20.9.0",
+    "highlight.js": "^11.9.0",
+    "husky": "^8.0.3",
+    "markdown-it": "^14.0.0",
+    "moment": "^2.29.4",
+    "nuxt": "^3.8.2",
+    "semantic-release": "^22.0.12",
+    "simplebar": "^6.2.5",
+    "simplebar-vue": "^2.3.3",
+    "twemoji": "^14.0.2"
   }
 }
