@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/necodeus/acp-nuxt/compare/v1.2.0...v1.3.0) (2023-12-17)
+
+
+### Features
+
+* **0:** base router path ([ce6b80d](https://github.com/necodeus/acp-nuxt/commit/ce6b80dbbe8ea4718911d992ea398faaeaa61d0b))
+
 # [1.2.0](https://github.com/necodeus/acp-nuxt/compare/v1.1.0...v1.2.0) (2023-12-17)
 
 
