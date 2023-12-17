@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/necodeus/acp-nuxt/compare/v1.0.0...v1.1.0) (2023-12-17)
+
+
+### Features
+
+* **0:** test ([0ff163c](https://github.com/necodeus/acp-nuxt/commit/0ff163c68e51fb1f3ace2c0025c95858f0daa2b0))
+
 # 1.0.0 (2023-12-16)
 
 
