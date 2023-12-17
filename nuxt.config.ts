@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
-    router: {
-      base: '/acp/'
+    app: {
+      baseURL: '/acp/'
     },
     css: [
         '@/assets/css/main.css',
